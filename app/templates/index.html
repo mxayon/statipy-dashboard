@@ -1,11 +1,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    {% if title %}
     <title> {{ title }} Dashboard </title>
+    {% else %}
+    <title> Dashboard </title>
+    {% endif %}
   </head>
   <body>
     <h1> Welcome to {{ title }}</h1>
     <p> Hello, {{ user.username }}!</p>
 
+    {% for post in posts %}
+    <div>
+      <p> <b><a href="#">{{ views.title.date }}</a></b> || {{ views.body }}
+      </p>
+    </div>
+    {% endfor %}
   </body>
 </html>
